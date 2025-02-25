@@ -1,4 +1,22 @@
 import { Text, View,StyleSheet,Image,ScrollView} from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Pagina from "./pagina";
+
+const RootStack = createNativeStackNavigator({
+  initialRouteName: 'Home',
+  screens: {
+    Home: {
+      screen: Index,
+    },
+    Details: Pagina,
+  },
+  
+});
+
+  
+
+const Stack = createNativeStackNavigator();
 
 //para usar um CSS externo deve-se usar o StyleSheet
 export default function Index() {
@@ -138,9 +156,17 @@ export default function Index() {
 
       </View>
       </ScrollView>
+
     </View>
   );
 
+      {/*navegação* */}
+    // <NavigationContainer> 
+    //   <RootStack />
+    // </NavigationContainer>
+
+
+    
   //criação do css externo
 }
 const estilos = StyleSheet.create({
@@ -170,3 +196,10 @@ const estilos = StyleSheet.create({
       transform: [{translateX:50}],
     }
 })
+
+
+
+
+
+
+{/* https://reactnavigation.org/docs/hello-react-navigation?config=dynamic    LINK da navegação pra poder continuar, 2 bibliotecas instalada* */}
